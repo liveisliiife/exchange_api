@@ -23,6 +23,8 @@ if given_money == "EURO":
 if taken_money == "EURO":
     my_rates = 1/result["rates"][given_money]
 
-
+if given_money == "EURO" and taken_money == "EURO":
+    my_rates = 1
+    
 result = my_rates * amount_given_money
 print("The",taken_money,"amount you will receive is ",round(result,3))
