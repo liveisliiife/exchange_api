@@ -17,14 +17,15 @@ if given_money != "EURO" and taken_money != "EURO":
     y = result["rates"][taken_money]
     my_rates = (y / x)
 
-if given_money == "EURO":
+elif given_money == "EURO" and taken_money == "EURO":
+    my_rates = 1
+
+elif given_money == "EURO":
     my_rates = result["rates"][taken_money]
 
-if taken_money == "EURO":
-    my_rates = 1/result["rates"][given_money]
+else:
+    my_rates = 1 / result["rates"][given_money]
 
-if given_money == "EURO" and taken_money == "EURO":
-    my_rates = 1
-    
 result = my_rates * amount_given_money
-print("The",taken_money,"amount you will receive is ",round(result,3))
+print("The", taken_money, "amount you will receive is ", round(result, 3))
+
