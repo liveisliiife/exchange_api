@@ -15,16 +15,16 @@ my_rates = 0
 if given_money != "EURO" and taken_money != "EURO":
     x = result["rates"][given_money]
     y = result["rates"][taken_money]
-    my_rates = (y / x)
+    my_rates = y/x
 
-elif given_money == "EURO" and taken_money == "EURO":
-    my_rates = 1
+elif taken_money == "EURO":
+    my_rates = 1 / result["rates"][given_money]
 
 elif given_money == "EURO":
     my_rates = result["rates"][taken_money]
 
 else:
-    my_rates = 1 / result["rates"][given_money]
+    my_rates = 1
 
 result = my_rates * amount_given_money
 print("The", taken_money, "amount you will receive is ", round(result, 3))
